@@ -1,0 +1,253 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 270px;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: $sidebar-border;
+
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #007bff, #6a11cb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 0 0 20px 0;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: #6a11cb;
+      margin: 5px auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .sidebar-content {
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #F3F5F7;
+    border: 1px solid #E4E5E6;
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .info {
+        flex: 1;
+
+        h4 {
+          text-transform: capitalize;
+          margin: 0;
+          font-size: 14px;
+          color: #131920;
+        }
+
+        p {
+          margin-top: 3px !important;
+          margin: 0;
+          font-size: 12px;
+          color: #131920;
+        }
+      }
+
+      .menu-btn {
+        background: none;
+        border: none;
+        font-size: 16px;
+        color: #5b6b79;
+        cursor: pointer;
+      }
+    }
+
+    .dropdown {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease-in-out;
+
+      ul {
+        list-style: none;
+
+        li {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          gap: 8px;
+          padding: 8px 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background 0.3s;
+
+          &:hover {
+            background: #E4E5E6;
+          }
+        }
+      }
+    }
+
+    .dropdown.open {
+      height: 140px;
+    }
+  }
+
+  .collapse-label {
+    color: #131920;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    strong {
+      color: #007bff;
+    }
+  }
+
+  .group-item {
+    padding: 12px;
+    background: white;
+    cursor: pointer !important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .group-item:hover {
+    background: #f4f4f460;
+  }
+
+  .group-item.active {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+}
+
+.sidebar.dark {
+  border-right: $sidebar-border-dark;
+
+  .sidebar-content {
+    background-color: #1B232D;
+    color: $dark-text;
+  }
+
+  .profile {
+    .menu-btn {
+      color: $dark-text;
+    }
+
+    .info {
+      h4 {
+        color: #BFBFBF;
+      }
+
+      p {
+        color: #BFBFBF;
+      }
+    }
+  }
+
+  .dropdown {
+    ul {
+      li {
+        color: #A9AAAC;
+
+        &:hover {
+          background: #263240;
+        }
+      }
+    }
+  }
+
+  .collapse-label {
+    color: #BFBFBF;
+  }
+
+  .sidebar-collapse {
+    background-color: #1B232D;
+
+    .anticon {
+      color: #BFBFBF;
+    }
+
+    .ant-collapse-content-box {
+      background-color: #1B232D;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .group-item {
+      color: #BFBFBF;
+      background-color: #263240;
+
+      &:hover {
+        background-color: #3f57745d;
+      }
+
+      &.active {
+        background-color: #3f5774;
+      }
+    }
+  }
+
+  .custom-dark-drawer,
+  .ant-drawer-content {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+  }
+
+  .custom-dark-drawer,
+  .ant-drawer-header {
+    background-color: #333 !important;
+    border-bottom: 1px solid #444;
+  }
+
+  .custom-dark-drawer .ant-drawer-title {
+    color: #ff9800 !important;
+  }
+
+  .custom-dark-drawer .ant-drawer-close {
+    color: #fff !important;
+  }
+
+  .custom-dark-drawer .ant-form-item-label>label {
+    color: #fff !important;
+  }
+
+  .custom-dark-drawer .ant-input {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+  }
+
+  .custom-dark-drawer .ant-input::placeholder {
+    color: #aaa !important;
+  }
+
+  .custom-dark-drawer .ant-btn-primary {
+    background-color: #ff9800 !important;
+    border-color: #ff9800 !important;
+  }
+
+  .custom-dark-drawer .ant-btn-primary:hover {
+    background-color: #e68900 !important;
+    border-color: #e68900 !important;
+  }
+}
