@@ -1,37 +1,39 @@
 .sidebar {
   position: sticky;
   top: 0;
-  width: 270px;
+  width: 300px;
   height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
   border-right: $sidebar-border;
-
-  .logo {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #007bff, #6a11cb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 2px;
-    text-align: center;
-    padding: 0 0 20px 0;
-    position: relative;
-    display: inline-block;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 60%;
-      height: 3px;
-      background: #6a11cb;
-      margin: 5px auto 0;
-      border-radius: 2px;
+  .ant-btn{
+    background-color: $primary;
+    &:hover{
+      background-color: $primary-hover !important;
     }
   }
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: start;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: "Pacifico", cursive;
+    color: $white;
+    
 
+  }
+.ant-collapse-content  {
+  border-radius:  14px !important;
+
+}
+.ant-collapse-header{
+  border-radius: 10px !important ;
+
+}
   .sidebar-content {
     padding: 5px;
     width: 100%;
@@ -106,7 +108,7 @@
     }
 
     .dropdown.open {
-      height: 140px;
+      height: 110px;
     }
   }
 
@@ -119,7 +121,7 @@
     gap: 5px;
 
     strong {
-      color: #007bff;
+      color: #6D28D9  ;
     }
   }
 
@@ -145,7 +147,7 @@
   border-right: $sidebar-border-dark;
 
   .sidebar-content {
-    background-color: #1B232D;
+    background-color: $sidebar-bg-dark;
     color: $dark-text;
   }
 
@@ -166,7 +168,14 @@
   }
 
   .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     ul {
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px solid $border-color !important;
+      width: 90%;
       li {
         color: #A9AAAC;
 
@@ -182,28 +191,30 @@
   }
 
   .sidebar-collapse {
-    background-color: #1B232D;
+      background-color: #111827;
+      border-radius: 0 0 10px 10px;
+
 
     .anticon {
       color: #BFBFBF;
     }
 
     .ant-collapse-content-box {
-      background-color: #1B232D;
-      border-radius: 0 0 8px 8px;
+      background-color:  #111827  ;
+      border-radius: 10px !important;
     }
 
     .group-item {
       color: #BFBFBF;
-      background-color: #263240;
+      background-color: #0c1221;
 
-      &:hover {
-        background-color: #3f57745d;
-      }
+      // &:hover {
+      //   background-color: #3f57745d;
+      // }
 
-      &.active {
-        background-color: #3f5774;
-      }
+      // &.active {
+      //   background-color: #3f5774;
+      // }
     }
   }
 

@@ -55,7 +55,7 @@ function Sidebar() {
 
   return (
     <div className={`sidebar ${darkMode ? "dark" : ""}`}>
-      <Link className="logo" to="/">GroupMart</Link>
+      <Link className="logo" to="/">Shoplist</Link>
       <div className="sidebar-content">
         <div className="profile">
           <img src="avatar.jpg" alt="Profile" className="avatar" />
@@ -75,9 +75,7 @@ function Sidebar() {
             <li onClick={() => handleNavigation("/settings")}>
               <FaCog /> Settings
             </li>
-            <li onClick={() => handleNavigation("/lock-screen")}>
-              <FaLock /> Lock Screen
-            </li>
+          
             <li onClick={logout}>
               <FaPowerOff /> Logout
             </li>

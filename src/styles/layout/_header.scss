@@ -287,14 +287,14 @@
 }
 
 .header.dark {
-  background-color: rgba(21, 27, 34, 0.8);
+  background-color: $body-bg-dark;
 
   .menu {
-    background-color: #1B232D;
+    background-color: $sidebar-bg-dark;
   }
 
   .input {
-    background-color: #1B232D;
+    background-color: $sidebar-bg-dark;
     color: #A9AAAC;
   }
 
