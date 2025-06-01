@@ -23,8 +23,15 @@
     margin-bottom: 20px;
     font-family: "Pacifico", cursive;
     color: $white;
-    
-
+    i{
+      font-size: 30px;
+      margin-right: 10px;
+      margin-left: 5px;
+      color: $primary;
+    }
+    a{
+      margin: 0 !important;
+    }
   }
 .ant-collapse-content  {
   border-radius:  14px !important;
@@ -192,7 +199,7 @@
 
   .sidebar-collapse {
       background-color: #111827;
-      border-radius: 0 0 10px 10px;
+      // border-radius: 0 0 10px 10px;
 
 
     .anticon {

@@ -45,17 +45,14 @@
                 }
 
                 .username__copy {
-                    background-color: #0075fb;
-                    border: 1px solid #0075fb;
+                    background-color: $primary  ;
 
-                    &:hover {
-                        background-color: #0065d9;
-                    }
+              
                 }
 
                 .username__delete {
-                    background-color: #ff3636;
-                    border: 1px solid #ff3636;
+                    background-color: #a60202 !important;
+                    border: 1px solid #FF2828;
 
                     &:hover {
                         background-color: #e60000;
