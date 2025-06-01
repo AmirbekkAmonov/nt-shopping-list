@@ -110,11 +110,11 @@
 
 body.dark {
     .home {
-        background-color: #1B232D;
-        border-top: 2px dashed #222d39;
+        background-color: $body-bg-dark;
+        border-top: 2px dashed $dark-border-color;
     }
 
     .home__user {
-        background-color: #222d39;
+        background-color: $sidebar-bg-dark;
     }
 }
