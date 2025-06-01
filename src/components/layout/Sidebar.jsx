@@ -55,7 +55,10 @@ function Sidebar() {
 
   return (
     <div className={`sidebar ${darkMode ? "dark" : ""}`}>
+      <div className="logo">
+      <i class="fa-solid fa-blog "></i>
       <Link className="logo" to="/">Shoplist</Link>
+      </div>
       <div className="sidebar-content">
         <div className="profile">
           <img src="avatar.jpg" alt="Profile" className="avatar" />

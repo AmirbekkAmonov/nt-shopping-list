@@ -216,10 +216,7 @@ function Header() {
             <FontAwesomeIcon icon={faCog} />
           </button>
 
-          <button className="icon-btn">
-            <FontAwesomeIcon icon={faBolt} />
-          </button>
-
+       
           <div className="relative" ref={notificationRef}>
             <button className="icon-btn notification" onClick={() => setNotificationOpen(!isNotificationOpen)}>
               <FontAwesomeIcon icon={faBell} />
