@@ -251,12 +251,6 @@ function Header() {
             )}
           </div>
 
-          <Link to="/settings">
-            <button className="icon-btn">
-              <FontAwesomeIcon icon={faCog} />
-            </button>
-          </Link>
-
           <div className="relative" ref={notificationRef}>
             <button
               className="icon-btn notification"

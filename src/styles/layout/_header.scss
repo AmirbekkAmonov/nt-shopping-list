@@ -226,9 +226,12 @@
 
     .relative {
       position: relative;
-
+      
       @media (max-width: 980px) {
-        display: none;
+        display: block;
+        .notification{
+          display: none;
+        }
       }
     }
 
