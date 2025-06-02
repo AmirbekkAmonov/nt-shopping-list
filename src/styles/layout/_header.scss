@@ -1,6 +1,9 @@
 .header {
   position: fixed;
   width: calc(100% - 300px);
+  .avatar {
+    font-size: 40px;
+  }
 
   top: 0;
   backdrop-filter: blur(5px);
