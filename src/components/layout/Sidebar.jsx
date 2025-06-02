@@ -3,15 +3,6 @@ import { useTheme } from "@/hooks/useTheme";
 import { useStore } from "@/hooks/useStore";
 import { FaUser, FaCog, FaLock, FaPowerOff, FaEllipsisV, FaUsers, FaPlus } from "react-icons/fa";
 import { Collapse, Button, Drawer, Form, Input, List, message, Modal } from "antd";
-import {
-  FaUser,
-  FaCog,
-  FaPowerOff,
-  FaEllipsisV,
-  FaUsers,
-  FaPlus,
-} from "react-icons/fa";
-import { Collapse, Button, Drawer, Form, Input, List, message } from "antd";
 import useAuth from "@/hooks/useAuth";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useMyGroups, useCreateGroup } from "@/hooks/useGroups";
@@ -151,12 +142,11 @@ function Sidebar() {
           },
         ]}
       />
-      <Modal
       <button className="logout-btn" onClick={logout}>
       <FaPowerOff /> Logout
       </button>
   
-      <Drawer
+      <Modal
         title="Add New Group"
         open={drawerOpen}   // drawerOpen o‘zgarmadi, endi Modal ochilishi uchun ishlatiladi
         onCancel={() => setDrawerOpen(false)}
