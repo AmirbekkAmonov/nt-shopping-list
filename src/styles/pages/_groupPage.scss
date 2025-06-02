@@ -275,6 +275,9 @@
             }
 
             .members-list {
+                overflow-y: auto;
+                scrollbar-width: thin;
+                scrollbar-width: none;
                 list-style: none;
                 padding: 0;
                 border: 1px solid $border-color;
