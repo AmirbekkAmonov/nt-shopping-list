@@ -199,10 +199,10 @@
                     gap: 5px;
 
                     .bought-label {
-                        background-color: #28c0d8;
+                        background-color: $success;
                         color: white;
-                        padding: 5px;
-                        border-radius: 5px;
+                        padding: 3px 5px;
+                        border-radius: 6px;
                         font-size: 10px;
                         font-weight: 500;
                         display: inline-block;
@@ -247,31 +247,37 @@
             }
 
             .btn {
-                width: 35px;
-                height: 35px;
+                width: 45px;
+                height: 45px;
                 border: none;
                 border-radius: 5px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                padding: 10px;
+
             }
 
             .green {
-                background: #2ecc71;
+                background: $success;
                 color: white;
+                border-radius: 50%;
                 font-size: 18px;
             }
 
             .yellow {
-                background: #f1c40f;
+                background: #555;
                 color: white;
                 font-size: 20px;
+                border-radius: 50%;
             }
 
             .red {
-                background: #e74c3c;
+                background: $danger;
                 color: white;
+                border-radius: 50%;
+                font-size: 20px;
             }
 
             .members-list {
@@ -315,8 +321,8 @@
                         width: 35px;
                         height: 35px;
                         border: none;
-                        font-size: 24px;
-                        border-radius: 5px;
+                        font-size: 20px;
+                        border-radius: 50%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
