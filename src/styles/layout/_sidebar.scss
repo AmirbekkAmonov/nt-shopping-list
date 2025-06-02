@@ -50,14 +50,15 @@
     margin-bottom: 20px;
     font-family: "Pacifico", cursive;
     color: $white;
+    a {
+      margin: 0 !important;
+      color: black !important;
+    }
     i {
       font-size: 30px;
       margin-right: 10px;
       margin-left: 5px;
       color: $primary;
-    }
-    a {
-      margin: 0 !important;
     }
   }
   .ant-collapse-content {
@@ -233,6 +234,9 @@
 .sidebar.dark {
   border-right: $sidebar-border-dark;
 
+  .logo{
+    color: #fff !important;   
+  }
   .sidebar-content {
     background-color: $sidebar-bg-dark;
     color: $dark-text;
@@ -390,4 +394,3 @@
     }
   }
 }
-
