@@ -7,7 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import GroupPage from "@/pages/GroupPage";
 import ProfilePage from "@/pages/ProfilePage";
 import NotFound from "@/pages/NotFound";
-import Settings from "../pages/Settings";
+import Groups from "../pages/Groups";
 
 function AppRoutes() {
   return (
@@ -17,9 +17,9 @@ function AppRoutes() {
       <Route path="/" element={<PrivateRoute />}>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/groups" element={<Groups/>}/>
           <Route path="/groups/:id" element={<GroupPage />} />
           <Route path="/profile" element={<ProfilePage/>}/>
-          <Route path="/settings" element={<Settings/>}/>
         </Route>
         <Route path="*" element={<NotFound/>}/>
       </Route>
