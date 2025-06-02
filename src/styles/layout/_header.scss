@@ -8,11 +8,11 @@
   padding: 25px 25px 25px 0;
   transition: all 0.3s ease-in-out;
 
-  @media (max-width:980px) {
+  @media (max-width: 980px) {
     width: calc(100% - 250px);
   }
 
-  @media (max-width:720px) {
+  @media (max-width: 720px) {
     width: 100%;
     padding: 15px;
   }
@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width:720px) {
+    @media (max-width: 720px) {
       gap: 15px;
     }
   }
@@ -33,7 +33,7 @@
     font-weight: 600;
     color: $dark-primary;
 
-    @media (max-width:720px) {
+    @media (max-width: 720px) {
       display: block;
     }
   }
@@ -82,7 +82,7 @@
 
       .search-results {
         position: absolute;
-        top: 100%;
+        top: 120%;
         left: 0;
         width: 90%;
         background-color: #fff;
@@ -96,7 +96,7 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
 
-        @media (max-width:720px) {
+        @media (max-width: 720px) {
           width: 100%;
         }
 
@@ -204,7 +204,7 @@
         border-radius: 10px;
         background-color: $sidebar-bg-dark !important;
 
-        @media (max-width:720px) {
+        @media (max-width: 720px) {
           width: 100%;
         }
       }
@@ -313,7 +313,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      background-color: #0075fb;
+      background-color: $primary !important;
       border-radius: 50%;
       border: none;
 
@@ -349,12 +349,14 @@
   }
 
   .search-results {
-    background-color: #263240 !important;
+    background-color: $sidebar-bg-dark !important;
     color: #fff;
     box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    opacity: 1 !important;
 
     ul {
-      background-color: #263240 !important;
+      opacity: 1 !important;
+      background-color: $sidebar-bg-dark !important;
     }
   }
 
