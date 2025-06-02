@@ -8,56 +8,60 @@ import {
   faMoon,
   faLanguage,
   faCog,
-  faBolt,
   faBell,
   faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "@/hooks/useAuth";
 import { useGroups, useJoinGroup, useMyGroups } from "@/hooks/useGroups";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const { darkMode, setDarkMode, setLanguage, themeMode, setThemeMode } = useTheme();
+  const { darkMode, setDarkMode, setLanguage, themeMode, setThemeMode } =
+    useTheme();
   const [isThemeOpen, setThemeOpen] = useState(false);
   const [isLangOpen, setLangOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isNotificationOpen, setNotificationOpen] = useState(false);
   const { logout } = useAuth();
   const [password, setPassword] = useState("");
-  const [group, setGroup] = useState('');
+  const [group, setGroup] = useState("");
   const { groups, isLoadingGroups, isErrorGroups } = useGroups(group);
   const { mutate: joinGroup, isLoading, isError, error } = useJoinGroup();
   const { refetch, myGroups } = useMyGroups();
-
-
   const themeRef = useRef(null);
   const langRef = useRef(null);
   const menuRef = useRef(null);
   const notificationRef = useRef(null);
 
-  // Popoverni yopish
   useEffect(() => {
     function handleClickOutside(event) {
-      if (themeRef.current && !themeRef.current.contains(event.target)) setThemeOpen(false);
-      if (langRef.current && !langRef.current.contains(event.target)) setLangOpen(false);
-      if (menuRef.current && !menuRef.current.contains(event.target)) setMenuOpen(false);
-      if (notificationRef.current && !notificationRef.current.contains(event.target)) setNotificationOpen(false);
+      if (themeRef.current && !themeRef.current.contains(event.target))
+        setThemeOpen(false);
+      if (langRef.current && !langRef.current.contains(event.target))
+        setLangOpen(false);
+      if (menuRef.current && !menuRef.current.contains(event.target))
+        setMenuOpen(false);
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target)
+      )
+        setNotificationOpen(false);
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Tema o'zgartirish
   const changeTheme = (mode) => {
     setThemeMode(mode);
     if (mode === "system") {
-      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const systemDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       setDarkMode(systemDark);
     } else {
       setDarkMode(mode === "dark");
     }
   };
-
-  // Guruhga qo'shish
   const handleJoin = (group) => {
     if (!group._id) {
       message.error("Group ID is missing!");
@@ -77,25 +81,36 @@ function Header() {
           refetch();
         },
         onError: (err) => {
-          message.error(err.response?.data?.error || "Failed to join the group.");
+          message.error(
+            err.response?.data?.error || "Failed to join the group."
+          );
         },
       }
     );
   };
 
-  // Guruhga qo'shish uchun popover(modal)
   const joinPopoverContent = (group) => (
     <div>
       <Input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        style={{ width: "100%", padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}
+        style={{
+          width: "100%",
+          padding: "8px",
+          borderRadius: "5px",
+          border: "1px solid #ccc",
+        }}
         placeholder="Enter group password"
       />
       <Button
         type="primary"
-        style={{ backgroundColor: "green", color: "white", width: "100%", marginTop: "10px" }}
+        style={{
+          backgroundColor: "green",
+          color: "white",
+          width: "100%",
+          marginTop: "10px",
+        }}
         onClick={() => handleJoin(group)}
         disabled={isLoading}
       >
@@ -105,7 +120,6 @@ function Header() {
     </div>
   );
 
-  // Guruhlarni qidirish uchun filter
   const filteredGroups = groups?.filter(
     (g) => !myGroups?.some((myGroup) => myGroup._id === g._id)
   );
@@ -114,9 +128,13 @@ function Header() {
     <header className={`header ${darkMode ? "dark" : ""}`}>
       <div className="container">
         <div className="menu-input">
-        <i class="fa-solid fa-blog header-logo "></i>
+          <i class="fa-solid fa-blog header-logo "></i>
           <label>
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" style={{ color: "#A9AAAC" }} />
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="search-icon"
+              style={{ color: "#A9AAAC" }}
+            />
             <input
               type="text"
               placeholder="Search..."
@@ -126,7 +144,7 @@ function Header() {
             />
             {group.length > 0 && (
               <div className="search-results">
-                {groups.length > 0 && !isLoadingGroups && <h3>Groups</h3>}
+                {groups.length > 0 && !isLoadingGroups}
                 <ul>
                   {isLoadingGroups ? (
                     <p className="loading">Loading groups...</p>
@@ -136,11 +154,22 @@ function Header() {
                         <div className="user">
                           <div className="user-info">
                             <h4>{group.name}</h4>
-                            <span>{new Date(group.createdAt).toISOString().slice(0, 19).replace('T', ' ')}</span>
+                            <span>
+                              {new Date(group.createdAt)
+                                .toISOString()
+                                .slice(0, 19)
+                                .replace("T", " ")}
+                            </span>
                           </div>
-                          <p>Created By: <span>{group.owner.name}</span></p>
+                          <p>
+                            Created By: <span>{group.owner.name}</span>
+                          </p>
                         </div>
-                        <Popover content={() => joinPopoverContent(group)} title="Group password" trigger="click">
+                        <Popover
+                          content={() => joinPopoverContent(group)}
+                          title="Group password"
+                          trigger="click"
+                        >
                           <button className="join-btn">Join</button>
                         </Popover>
                       </li>
@@ -156,8 +185,19 @@ function Header() {
         {isErrorGroups && console.log("Error fetching groups: ", isErrorGroups)}
         <div className="flex">
           <div className="relative" ref={themeRef}>
-            <button className="icon-btn" onClick={() => setThemeOpen(!isThemeOpen)}>
-              <FontAwesomeIcon icon={themeMode === "dark" ? faMoon : themeMode === "light" ? faSun : faDesktop} />
+            <button
+              className="icon-btn"
+              onClick={() => setThemeOpen(!isThemeOpen)}
+            >
+              <FontAwesomeIcon
+                icon={
+                  themeMode === "dark"
+                    ? faMoon
+                    : themeMode === "light"
+                    ? faSun
+                    : faDesktop
+                }
+              />
             </button>
             {isThemeOpen && (
               <div className="dropdown">
@@ -175,7 +215,10 @@ function Header() {
           </div>
 
           <div className="relative" ref={langRef}>
-            <button className="icon-btn" onClick={() => setLangOpen(!isLangOpen)}>
+            <button
+              className="icon-btn"
+              onClick={() => setLangOpen(!isLangOpen)}
+            >
               <FontAwesomeIcon icon={faLanguage} />
             </button>
             {isLangOpen && (
@@ -208,13 +251,17 @@ function Header() {
             )}
           </div>
 
-          <button className="icon-btn relative">
-            <FontAwesomeIcon icon={faCog} />
-          </button>
+          <Link to="/settings">
+            <button className="icon-btn">
+              <FontAwesomeIcon icon={faCog} />
+            </button>
+          </Link>
 
-       
           <div className="relative" ref={notificationRef}>
-            <button className="icon-btn notification" onClick={() => setNotificationOpen(!isNotificationOpen)}>
+            <button
+              className="icon-btn notification"
+              onClick={() => setNotificationOpen(!isNotificationOpen)}
+            >
               <FontAwesomeIcon icon={faBell} />
               <span className="badge">3</span>
             </button>

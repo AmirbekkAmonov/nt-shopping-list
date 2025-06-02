@@ -1,7 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/hooks/useTheme";
 import { useStore } from "@/hooks/useStore";
-import { FaUser, FaCog, FaLock, FaPowerOff, FaEllipsisV, FaUsers, FaPlus } from "react-icons/fa";
+import {
+  FaUser,
+  FaCog,
+  FaPowerOff,
+  FaEllipsisV,
+  FaUsers,
+  FaPlus,
+} from "react-icons/fa";
 import { Collapse, Button, Drawer, Form, Input, List, message } from "antd";
 import useAuth from "@/hooks/useAuth";
 import { Link, useNavigate, NavLink } from "react-router-dom";
@@ -29,7 +36,6 @@ function Sidebar() {
     }
   }, [myGroups]);
 
-
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
@@ -37,7 +43,9 @@ function Sidebar() {
 
   const handleAddGroup = async (values) => {
     try {
-      const existingGroup = myGroups.find((group) => group.name === values.name);
+      const existingGroup = myGroups.find(
+        (group) => group.name === values.name
+      );
       if (existingGroup) {
         message.error("A group with this name already exists!");
         return;
@@ -46,9 +54,15 @@ function Sidebar() {
       form.resetFields();
       setDrawerOpen(false);
       await refetch();
+      await refetch();
     } catch (error) {
-      console.error("Error creating group:", error.response?.data || error.message);
-      message.error(`Error: ${error.response?.data?.message || "Unknown error"}`);
+      console.error(
+        "Error creating group:",
+        error.response?.data || error.message
+      );
+      message.error(
+        `Error: ${error.response?.data?.message || "Unknown error"}`
+      );
     }
   };
 
@@ -79,6 +93,7 @@ function Sidebar() {
             <li onClick={() => handleNavigation("/settings")}>
               <FaCog /> Settings
             </li>
+
 
             <li onClick={logout}>
               <FaPowerOff /> Logout
@@ -118,7 +133,13 @@ function Sidebar() {
                   loading={isLoadingMyGroups}
                   dataSource={[...(groups || []), ...(myGroups || [])]}
                   renderItem={(group) => (
-                    <List.Item onClick={() => navigate(`/groups/${group._id || "default"}`)} style={{ cursor: "pointer" }} className="group-item">
+                    <List.Item
+                      onClick={() =>
+                        navigate(`/groups/${group._id || "default"}`)
+                      }
+                      style={{ cursor: "pointer" }}
+                      className="group-item"
+                    >
                       <strong>{group?.name || "No Name"}</strong>
                     </List.Item>
                   )}
@@ -128,6 +149,10 @@ function Sidebar() {
           },
         ]}
       />
+      <button className="logout-btn" onClick={logout}>
+      <FaPowerOff /> Logout
+      </button>
+  
       <Drawer
         title="Add New Group"
         placement="right"
@@ -139,16 +164,23 @@ function Sidebar() {
           <Form.Item
             name="name"
             label="Group Name"
-            rules={[{ required: true, message: "Please enter the group name!" }]}
+            rules={[
+              { required: true, message: "Please enter the group name!" },
+            ]}
           >
             <Input placeholder="Enter group name..." />
           </Form.Item>
           <Form.Item
             name="password"
             label="Group Password"
-            rules={[{ required: true, message: "Please enter the group password!" }]}
+            rules={[
+              { required: true, message: "Please enter the group password!" },
+            ]}
           >
-            <Input.Password placeholder="Enter password..." style={{ padding: "8px" }} />
+            <Input.Password
+              placeholder="Enter password..."
+              style={{ padding: "8px" }}
+            />
           </Form.Item>
           <Button type="primary" htmlType="submit" block>
             Add

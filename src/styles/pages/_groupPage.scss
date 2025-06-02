@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 82px);
     padding: 20px;
     background-color: #FFF;
     overflow: hidden;
@@ -137,7 +137,7 @@
                         padding: 2px 10px;
                         border-radius: 5px;
                         border: 1px solid $border-color;
-                        background-color: #0075fb;
+                        background-color: $primary;
                         color: #FFF;
                         font-size: 24px;
                         display: flex;
@@ -153,7 +153,7 @@
                     font-weight: 600;
 
                     span {
-                        background-color: #0075fb;
+                        background-color: $primary;
                         color: #FFF;
                         padding: 2px 10px;
                         border-radius: 5px;
@@ -207,7 +207,7 @@
             .avatar {
                 width: 40px;
                 height: 40px;
-                background: royalblue;
+                background: $primary;
                 color: white;
                 font-weight: bold;
                 font-size: 18px;
@@ -271,16 +271,18 @@
                 list-style: none;
                 padding: 0;
                 border: 1px solid $border-color;
-                padding: 10px;
                 border-radius: 5px;
                 margin-top: 5px;
 
                 .member-item {
                     display: flex;
                     align-items: center;
-                    padding: 10px 0;
-                    border-bottom: 1px solid #ddd;
+                    padding: 12px;
+                    box-shadow: 0 0 5px rgba($color: $sidebar-bg-dark, $alpha: 0.1);
+                    background-color: $third-bg-dark;
+                    border-radius: 8px;
 
+                    margin-bottom: 5px;
                     &:last-child {
                         border-bottom: none;
                     }
@@ -325,14 +327,12 @@
 
 body.dark {
     .group-page {
-        background-color: #050b1d;
-        border-top: 2px dashed #222d39;
+        background-color: $body-bg-dark;
     }
 
     .owner,
     .menu-btn-group {
-        background-color: $body-bg-dark !important;
-        border: 1px solid #ccc !important;
+        background-color: $sidebar-bg-dark !important;
     }
 
     .menu-btn-group {
@@ -341,22 +341,29 @@ body.dark {
 
     .group-info,
     .group-members {
-        background-color: $body-bg-dark !important;
-        border: 1px solid #ccc !important;
+        background-color: $sidebar-bg-dark !important;
     }
 
     .input {
-        background-color: #1B232D !important;
+        background-color: $third-bg-dark  !important;
         color: #A9AAAC !important;
     }
 
     .members-list,
     .items-list {
-        background-color: $sidebar-bg-dark !important;
+        padding: 0 !important;
+        .item-card{
+            margin-bottom: 5px;
+            background-color: $third-bg-dark !important;
+            padding: 12px !important;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba($color: $sidebar-bg-dark, $alpha: 0.1);
+
+        }
     }
 
     .custom-dropdown .ant-dropdown-menu {
-        background-color: #1B232D !important;
+        background-color: $sidebar-bg-dark !important;
         border: 1px solid #ccc !important;
     }
 
