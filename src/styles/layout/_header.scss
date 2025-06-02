@@ -96,10 +96,10 @@
         -ms-overflow-style: none;
 
         @media (max-width: 720px) {
-          .user{
-            gap:2px !important;
+          .user {
+            gap: 2px !important;
           }
-          .user-info{
+          .user-info {
             display: flex;
             flex-direction: column;
             gap: 5px !important;
@@ -236,7 +236,7 @@
         padding: 10px 12px 10px 35px;
         font-size: 14px;
         border-radius: 10px;
-        background-color: white !important;
+        background-color: $white ;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         @media (max-width: 720px) {
           width: 100%;
@@ -295,7 +295,7 @@
       position: absolute;
       top: 40px;
       right: 0;
-      background: $sidebar-bg-dark;
+      background: $white;
       border: 1px solid #ccc;
       color: #465566;
       border-radius: 8px;
@@ -372,7 +372,6 @@
 .header.dark {
   background-color: $body-bg-dark;
 
-
   .menu {
     background-color: $sidebar-bg-dark;
   }
@@ -396,7 +395,9 @@
       background-color: $sidebar-bg-dark !important;
     }
   }
-
+  .input {
+    background-color: $sidebar-bg-dark !important;
+  }
   .dropdown {
     background-color: $sidebar-bg-dark;
     color: #fff;
