@@ -4,7 +4,7 @@ import { useStore } from "@/hooks/useStore";
 import { FaUser, FaCog, FaLock, FaPowerOff, FaEllipsisV, FaUsers, FaPlus } from "react-icons/fa";
 import { Collapse, Button, Drawer, Form, Input, List, message } from "antd";
 import useAuth from "@/hooks/useAuth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useMyGroups, useCreateGroup } from "@/hooks/useGroups";
 
 function Sidebar() {
@@ -43,21 +43,22 @@ function Sidebar() {
         return;
       }
       await createGroup.mutateAsync({ name: values.name, password: values.password });
-        form.resetFields();
+      form.resetFields();
       setDrawerOpen(false);
-      await refetch(); 
+      await refetch();
     } catch (error) {
       console.error("Error creating group:", error.response?.data || error.message);
       message.error(`Error: ${error.response?.data?.message || "Unknown error"}`);
     }
   };
-  
+
 
   return (
-    <div className={`sidebar ${darkMode ? "dark" : ""}`}>
+    <>
+      <div className={`sidebar ${darkMode ? "dark" : ""}`}>
       <div className="logo">
-      <i class="fa-solid fa-blog "></i>
-      <Link className="logo" to="/">Shoplist</Link>
+        <i class="fa-solid fa-blog "></i>
+        <Link className="logo" to="/">Shoplist</Link>
       </div>
       <div className="sidebar-content">
         <div className="profile">
@@ -78,7 +79,7 @@ function Sidebar() {
             <li onClick={() => handleNavigation("/settings")}>
               <FaCog /> Settings
             </li>
-          
+
             <li onClick={logout}>
               <FaPowerOff /> Logout
             </li>
@@ -127,7 +128,7 @@ function Sidebar() {
           },
         ]}
       />
-<Drawer
+      <Drawer
         title="Add New Group"
         placement="right"
         onClose={() => setDrawerOpen(false)}
@@ -155,6 +156,25 @@ function Sidebar() {
         </Form>
       </Drawer>
     </div>
+    <div className={`mobile-sidebar ${darkMode ? "dark" : ""}`}>
+      <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>
+        <i class="fa-solid fa-house "></i>
+      </NavLink>
+      <NavLink to="/groups" className={({ isActive }) => isActive ? 'active-link' : ''}>
+        <i class="fa-solid fa-list "></i>
+      </NavLink>
+      <div className="add-group" onClick={() => setDrawerOpen(true)}>
+        <i class="fa-solid fa-plus "></i>
+      </div>
+      <NavLink to="/settings" className={({ isActive }) => isActive ? 'active-link' : ''}>
+        <i class="fa-solid fa-gear "></i>
+      </NavLink>
+      <NavLink to="/profile" className={({ isActive }) => isActive ? 'active-link' : ''}>
+        <i class="fa-solid fa-user"></i>
+      </NavLink>
+
+    </div>
+    </>
   );
 }
 
