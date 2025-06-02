@@ -1,0 +1,119 @@
+.my-groups-page {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: #334155;
+    }
+
+    &__spin {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__empty {
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 24px;
+        color: #64748b;
+    }
+
+    .groups-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .group-item {
+        background: $white;
+        padding: 16px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        &__main {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #64748b;
+            font-size: 14px;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                svg {
+                    font-size: 14px;
+                    color: $dark-primary;
+                }
+            }
+
+            .group-item__button {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background-color: $dark-primary ;
+                border: none;
+                padding: 6px 16px;
+                height: 36px;
+                font-size: 14px;
+                font-weight: 500;
+
+                &:hover {
+                    transform: translateX(2px);
+                    background-color: $dark-primary;
+                }
+
+                svg {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.my-groups-page.dark {
+    color: $dark-text;
+    &__title {
+        color: $dark-text;
+    }
+    .group-item {
+        background-color: $third-bg-dark;
+        &__title {
+            color: $dark-text;
+        }
+    }
+}
