@@ -185,18 +185,14 @@ function Sidebar() {
       <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>
         <i class="fa-solid fa-house "></i>
       </NavLink>
-      <NavLink to="/groups" className={({ isActive }) => isActive ? 'active-link' : ''}>
-        <i class="fa-solid fa-list "></i>
-      </NavLink>
       <div className="add-group" onClick={() => setDrawerOpen(true)}>
         <i class="fa-solid fa-plus "></i>
       </div>
-      <NavLink to="/settings" className={({ isActive }) => isActive ? 'active-link' : ''}>
-        <i class="fa-solid fa-gear "></i>
+      <NavLink to="/groups" className={({ isActive }) => isActive ? 'active-link' : ''}>
+        <i class="fa-solid fa-list "></i>
       </NavLink>
-      <NavLink to="/profile" className={({ isActive }) => isActive ? 'active-link' : ''}>
-        <i class="fa-solid fa-user"></i>
-      </NavLink>
+
+
 
     </div>
     </>
