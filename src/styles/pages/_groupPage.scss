@@ -7,6 +7,11 @@
     padding: 20px;
     background-color: #FFF;
     overflow: hidden;
+    @media (max-width: 720px) {
+        overflow-y: visible;
+        scrollbar-width: none;
+        height: calc(100vh - 150px);
+    }
 
     .group-header {
         width: 100%;
@@ -32,6 +37,10 @@
                 align-items: center;
                 gap: 10px;
                 border: 1px solid $border-color;
+
+                @media (max-width:420px) {
+                    display: none;
+                }
 
                 h3,
                 p {
@@ -79,11 +88,14 @@
         align-items: start;
         gap: 20px;
         overflow-y: auto;
+        overflow-y: visible;
 
         @media (max-width: 980px) {
             flex-direction: column;
             scrollbar-width: none;
         }
+
+
 
         .group-info,
         .group-members {
@@ -99,6 +111,7 @@
             background-color: $body-bg;
             overflow-y: auto;
             scrollbar-width: thin;
+            overflow-y: visible;
 
             @media (max-width:980px) {
                 width: 100%;
