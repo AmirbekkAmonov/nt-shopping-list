@@ -151,7 +151,7 @@ function Sidebar() {
         open={drawerOpen}   // drawerOpen o‘zgarmadi, endi Modal ochilishi uchun ishlatiladi
         onCancel={() => setDrawerOpen(false)}
         footer={null}       // Formning o‘zidagi button ishlaydi, default footerni olib tashlaymiz
-        className="custom-dark-modal"
+        className={`custom-modal ${darkMode ? "dark" : "light"}`}
       >
         <Form form={form} onFinish={handleAddGroup} layout="vertical">
           <Form.Item

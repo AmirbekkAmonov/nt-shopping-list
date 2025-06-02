@@ -7,6 +7,11 @@
     padding: 20px;
     background-color: #FFF;
     overflow: hidden;
+    @media (max-width: 980px) {
+        overflow-y: visible;
+        scrollbar-width: none;
+    }
+
     @media (max-width: 720px) {
         overflow-y: visible;
         scrollbar-width: none;
