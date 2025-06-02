@@ -183,10 +183,12 @@
 
             .item-card {
                 display: flex;
-                align-items: center;
-                padding: 10px 0;
-                border-bottom: 1px solid #ddd;
-
+                    align-items: center;
+                    padding: 12px;
+                    box-shadow: 0 0 5px rgba($color: $sidebar-bg-dark, $alpha: 0.1);
+                    background-color: #FFF;
+                    border-radius: 8px;
+                    margin-bottom: 5px;
                 &:last-child {
                     border-bottom: none;
                 }
@@ -284,7 +286,7 @@
                     align-items: center;
                     padding: 12px;
                     box-shadow: 0 0 5px rgba($color: $sidebar-bg-dark, $alpha: 0.1);
-                    background-color: $third-bg-dark;
+                    background-color: #FFF;
                     border-radius: 8px;
 
                     margin-bottom: 5px;
@@ -364,6 +366,10 @@ body.dark {
             border-radius: 8px;
             box-shadow: 0 0 5px rgba($color: $sidebar-bg-dark, $alpha: 0.1);
 
+        }
+
+        .member-item {
+            background-color: $third-bg-dark !important;
         }
     }
 
