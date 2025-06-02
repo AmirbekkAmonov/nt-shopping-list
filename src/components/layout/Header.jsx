@@ -267,7 +267,7 @@ function Header() {
           </div>
           <div className="relative profile" ref={menuRef}>
             <button className="avatar" onClick={() => setMenuOpen(!isMenuOpen)}>
-              <img src="avatar.jpg" alt="User Avatar" />
+            <i class="fa-solid fa-circle-user"></i>{" "}
             </button>
             {isMenuOpen && (
               <div className="dropdown">

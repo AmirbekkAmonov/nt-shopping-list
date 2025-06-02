@@ -15,10 +15,11 @@
   @media (max-width: 720px) {
     display: none;
   }
-  .ant-collapse-header, .ant-collapse{
+  .ant-collapse-header,
+  .ant-collapse {
     background-color: $white !important;
   }
-  .ant-collapse{
+  .ant-collapse {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   .ant-btn {
@@ -30,7 +31,7 @@
   .logout-btn {
     position: absolute;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    cursor: pointer;
     bottom: 0;
     width: 260px;
     margin-bottom: 25px;
@@ -82,7 +83,6 @@
     border: 1px solid #e4e5e6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-
     .profile {
       display: flex;
       align-items: center;
@@ -91,9 +91,7 @@
       padding: 5px;
 
       .avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+        font-size: 40px;
       }
 
       .info {
@@ -127,9 +125,7 @@
       height: 0;
       overflow: hidden;
       transition: height 0.3s ease-in-out;
-      background-color: $white;
-      
-
+      background-color: $sidebar-bg-dark ;
       ul {
         list-style: none;
 
@@ -143,10 +139,8 @@
           cursor: pointer;
           border-radius: 5px;
           transition: background 0.3s;
-
-          &:hover {
-            background: #e4e5e6;
-          }
+          
+        
         }
       }
     }
@@ -272,13 +266,15 @@
 
     color: $white;
   }
-  .ant-collapse-header, .ant-collapse{
+  .ant-collapse-header,
+  .ant-collapse {
     background-color: $sidebar-bg-dark !important;
   }
   .dropdown {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $sidebar-bg-dark;
     ul {
       margin-top: 5px;
       padding-top: 5px;

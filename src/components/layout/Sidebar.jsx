@@ -69,8 +69,8 @@ function Sidebar() {
       </div>
       <div className="sidebar-content">
         <div className="profile">
-          <img src="avatar.jpg" alt="Profile" className="avatar" />
-          <div className="info">
+        <i class="fa-solid fa-circle-user avatar"></i>
+        <div className="info">
             <h4>{user ? user.name : "Guest"}</h4>
             <p>{user ? `@${user.username}` : "No username"}</p>
           </div>
