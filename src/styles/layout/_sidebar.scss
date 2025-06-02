@@ -7,6 +7,14 @@
   display: flex;
   flex-direction: column;
   border-right: $sidebar-border;
+
+  @media (max-width:980px) {
+    width: 250px;
+  }
+
+  @media (max-width:720px) {
+    display: none;
+  }
   .ant-btn{
     background-color: $primary;
     &:hover{
