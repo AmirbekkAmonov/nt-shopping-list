@@ -12,6 +12,12 @@ const LoginForm = () => {
 
   return (
     <div className="auth-container">
+      <div className="auth-content">
+
+      <div className="left">
+      <i class="fa-solid fa-blog "></i>
+      <h4>Shoplist</h4>
+      </div>
       <div className="auth-box">
         <h2>Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -44,6 +50,8 @@ const LoginForm = () => {
           Don't have an account? <Link to="/register">Sign Up</Link>
         </p>
       </div>
+      </div>
+
     </div>
   );
 };
