@@ -1,15 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/hooks/useTheme";
 import { useStore } from "@/hooks/useStore";
-import {
-  FaUser,
-  FaCog,
-  FaPowerOff,
-  FaEllipsisV,
-  FaUsers,
-  FaPlus,
-} from "react-icons/fa";
-import { Collapse, Button, Drawer, Form, Input, List, message } from "antd";
+import { FaUser, FaCog, FaLock, FaPowerOff, FaEllipsisV, FaUsers, FaPlus } from "react-icons/fa";
+import { Collapse, Button, Drawer, Form, Input, List, message, Modal } from "antd";
 import useAuth from "@/hooks/useAuth";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useMyGroups, useCreateGroup } from "@/hooks/useGroups";
@@ -153,12 +146,12 @@ function Sidebar() {
       <FaPowerOff /> Logout
       </button>
   
-      <Drawer
+      <Modal
         title="Add New Group"
-        placement="right"
-        onClose={() => setDrawerOpen(false)}
-        open={drawerOpen}
-        className="custom-dark-drawer"
+        open={drawerOpen}   // drawerOpen o‘zgarmadi, endi Modal ochilishi uchun ishlatiladi
+        onCancel={() => setDrawerOpen(false)}
+        footer={null}       // Formning o‘zidagi button ishlaydi, default footerni olib tashlaymiz
+        className="custom-dark-modal"
       >
         <Form form={form} onFinish={handleAddGroup} layout="vertical">
           <Form.Item
@@ -186,7 +179,7 @@ function Sidebar() {
             Add
           </Button>
         </Form>
-      </Drawer>
+      </Modal>
     </div>
     <div className={`mobile-sidebar ${darkMode ? "dark" : ""}`}>
       <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>
