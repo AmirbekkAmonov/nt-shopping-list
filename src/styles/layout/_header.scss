@@ -5,13 +5,37 @@
   top: 0;
   backdrop-filter: blur(5px);
   color: $text-color;
-  padding: 25px;
+  padding: 25px 25px 25px 0;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width:980px) {
+    width: calc(100% - 250px);
+  }
+
+  @media (max-width:720px) {
+    width: 100%;
+    padding: 15px;
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width:720px) {
+      gap: 15px;
+    }
+  }
+
+  .header-logo {
+    display: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: $dark-primary;
+
+    @media (max-width:720px) {
+      display: block;
+    }
   }
 
   .menu-input {
@@ -72,6 +96,10 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
 
+        @media (max-width:720px) {
+          width: 100%;
+        }
+
         &::-webkit-scrollbar {
           display: none !important;
         }
@@ -131,13 +159,16 @@
                 color: #fff;
               }
             }
+
             p {
               font-size: 14px;
+
               span {
                 font-weight: 600;
               }
             }
           }
+
           .join-btn {
             padding: 8px 15px;
             border-radius: 5px;
@@ -172,6 +203,10 @@
         font-size: 14px;
         border-radius: 10px;
         background-color: $sidebar-bg-dark !important;
+
+        @media (max-width:720px) {
+          width: 100%;
+        }
       }
 
       .search-icon {
@@ -191,6 +226,16 @@
 
     .relative {
       position: relative;
+
+      @media (max-width: 980px) {
+        display: none;
+      }
+    }
+
+    .profile {
+      @media (max-width: 980px) {
+        display: flex;
+      }
     }
 
     .icon-btn {

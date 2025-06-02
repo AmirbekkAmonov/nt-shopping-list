@@ -114,11 +114,7 @@ function Header() {
     <header className={`header ${darkMode ? "dark" : ""}`}>
       <div className="container">
         <div className="menu-input">
-          <button className="menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+        <i class="fa-solid fa-blog header-logo "></i>
           <label>
             <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" style={{ color: "#A9AAAC" }} />
             <input
@@ -212,7 +208,7 @@ function Header() {
             )}
           </div>
 
-          <button className="icon-btn">
+          <button className="icon-btn relative">
             <FontAwesomeIcon icon={faCog} />
           </button>
 
@@ -228,7 +224,7 @@ function Header() {
               </div>
             )}
           </div>
-          <div className="relative" ref={menuRef}>
+          <div className="relative profile" ref={menuRef}>
             <button className="avatar" onClick={() => setMenuOpen(!isMenuOpen)}>
               <img src="avatar.jpg" alt="User Avatar" />
             </button>
