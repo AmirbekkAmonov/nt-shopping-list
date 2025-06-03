@@ -64,7 +64,7 @@ function Sidebar() {
     <>
       <div className={`sidebar ${darkMode ? "dark" : ""}`}>
       <div className="logo">
-        <i class="fa-solid fa-blog "></i>
+        <i className="fa-solid fa-blog "></i>
         <Link className="logo" to="/">Shoplist</Link>
       </div>
       <div className="sidebar-content">
